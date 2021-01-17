@@ -39,7 +39,6 @@ class Game:
             except:
                 print('что-то пошло не так, поэтому была запущена новая игра')
                 self.__play(self.__get_new_grid())
-        self.bye()
 
     def startComputerGame(self):
         grid = sudoku.Grid(0)
@@ -62,7 +61,6 @@ class Game:
             print(grid)
         except sudoku.GridError as ge:
             print(ge)
-        self.bye()
 
     def __play(self, grid):
         while not grid.is_filled():
@@ -109,15 +107,6 @@ class Game:
         if not isinstance(grid, sudoku.Grid):
             raise ValueError
         return grid
-
-    def bye(self):
-        print('Спасибо, что согласилась помочь.\n'
-              'Извини, что я такой черствый и не могу тебе помочь с твоими переживаниями\n'
-              'Мне правда не все равно на твои проблемы, просто я совсем не знаю как тебе помочь :(\n'
-              'Мне нравится просто болтать с тобой или играть во что-нибудь, '
-              'надеюсь и тебе это приносит хоть какое-то облегчение\n'
-              'Обязательно сыграем в эволюцию! '
-              'ну или во что-нибудь еще, во что ты захочешь)')
 
 
 if __name__ == '__main__':
